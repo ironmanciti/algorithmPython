@@ -15,7 +15,7 @@ def extract_name(filename):
     names = []
     f = open(filename, 'r')
     text = f.read()
-    tuples = re.findall(r'<td>(\d)</td><td>(\w+)</td><td>(\w+)</td>', text)
+    tuples = re.findall(r'<td>(\d+)</td><td>(\w+)</td><td>(\w+)</td>', text)
     for tup in tuples:
         print(tup[0], tup[1], tup[2])
 

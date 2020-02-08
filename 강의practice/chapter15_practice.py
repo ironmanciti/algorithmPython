@@ -7,9 +7,6 @@ tokenized_doc2 = doc2.split()
 print(tokenized_doc1)
 print(tokenized_doc2)
 
-U = set(tokenized_doc1).union(set(tokenized_doc2))
-print(U)
-
 union = set(tokenized_doc1).union(set(tokenized_doc2))
 print(union)
 print(len(union))

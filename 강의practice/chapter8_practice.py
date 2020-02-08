@@ -14,7 +14,7 @@ for i in range(1, len(s) + 1):
     for j in range(i):
         sub = s[j] + sub
     print(sub)
-
+#%%
 """
 3) 다음 문장 수행 후의 output 은 ?
 """
@@ -27,7 +27,7 @@ def sum_part(xlist, n):
 ylist = [[1, 2], [3, 4], [5, 6], [7, 8]]
 x = sum_part(ylist, 2)
 print(x)
-
+#%%
 """
 Slide Type
 4) 숫자로 피라미드 만들기 : 홀수 숫자를 입력으로 받아서 좌우 대칭되는
@@ -38,11 +38,12 @@ def pyramid(n):
         print(" " * (n - i), end="")
         for j in range(1, i + 2):
             print(j, end="")
+        i = 0
         for j in range(i, 0, -1):
             print(j, end="")
         print()
 pyramid(7)
-
+#%%
 """
 5) 임의의 범위의 숫자를 모두 곱하는 함수를 작성하라.
     ex) multiply(2,4) ==> 2 * 3 * 4 = 24
@@ -66,7 +67,7 @@ def average(lst):
     return sum / len(lst)
 
 print(average([2,3,4,5,6]))
-
+#%%
 """
 7) [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] 을 for 문을 이용하여,
 
@@ -81,7 +82,7 @@ print(average([2,3,4,5,6]))
 x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 for i in range(len(x)-3):
     print(x[i:i+3], ',', i+4)
-
+#%%
 """
 >>도전문제
 피보나치 수열(Fibonacci Sequence)을 계산하는 프로그램도 파이썬으로 간단히 작성할 수
@@ -101,5 +102,5 @@ def fib(n):
 
 lst = []
 for i in range(10):
-    lst.append(fib(i))
+    lst.append(i)
 print(lst)

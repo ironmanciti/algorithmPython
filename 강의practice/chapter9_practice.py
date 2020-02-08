@@ -11,14 +11,17 @@ for x in sorted(d):
 d = {'a': 2, 'b': 4, 'c': 9}
 for x in sorted(d.values()):
     print(x, end="")
-
+#%%
 """
 3) 다음의 출력 결과는 ?
 """
-d = {'a': 2, 'b': 4, 'c': 9}
+d = {'a': 21, 'b': 4, 'c': 9}
 for x in sorted(d.items()):
     print(x, end="")
-
+#%%
+d = {'a': 21, 'b': 4, 'c': 9}
+print(sorted(d.items(), key=lambda kv: kv[1]))
+#%%
 """
 4) dictionary 를 이용하여 자신의 정보를 구조화 하여 작성
 """
@@ -35,7 +38,7 @@ personInfo = {
 }
 
 print(personInfo)
-
+#%%
 """
 5) 두개의 주사위를 던져서 두 주사위의 합이 같은 것끼리 출력
 """

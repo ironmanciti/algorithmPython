@@ -14,7 +14,7 @@ etime = time.time()
 print(etime-stime)
 
 # memoization 기법 적용
-
+#%%
 def bino_coef_memo(n, k):
     cache = [[0 for _ in range(k+1)] for _ in range(n+1)]  #2차원배열
 

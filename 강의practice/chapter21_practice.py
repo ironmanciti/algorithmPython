@@ -24,7 +24,7 @@ def findword(word):
         words = words[start:end]
 
 print(findword('헌법재판소는'))
-
+#%%
 max_count = 0
 for word in word_list:
     count = findword(word)
@@ -32,7 +32,7 @@ for word in word_list:
         max_count = count
 
 print("max_count = ", max_count)
-
+#%%
 total_search_count = 0
 for word in word_list:
     count = findword(word)
