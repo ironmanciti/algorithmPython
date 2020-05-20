@@ -1,3 +1,1 @@
-This is file write test
-This is 2nd line
-이것은 3번째 줄입니다.
+This is 3rd line

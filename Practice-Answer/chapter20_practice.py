@@ -7,7 +7,10 @@ alist 의 몇번째  element 인지 구하라. 단, for loop 과 비교문을 �
 
 # print([idx for idx, tup in enumerate(alist) if tup[0] == 'a'])
 
-# (문제 2)
+"""
+(문제 2)
+다음 file 을 읽어서 가장 빈번하게 나타나는 top 10 단어들을 list comprehension 을 이용하여 출력
+"""
 f = open('poet.txt')
 counts = dict()
 

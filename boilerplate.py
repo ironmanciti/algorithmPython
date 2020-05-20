@@ -1,10 +1,10 @@
 import sys
 
-def main():
+def hello():
     print('Hello world to Python programming')
 
 if __name__ == '__main__':
-    main()
+    hello()
     print(sys.argv)
     print(sys.argv[0])
     print(sys.argv[1])

@@ -11,6 +11,7 @@
 #     sys.write("File reading error")
 
 # 문제 2
+# 다음 file 을 읽어서 가장 빈번하게 나타나는 top 10 단어들을 출력 
 f = open('poet.txt')
 counts = dict()
 
