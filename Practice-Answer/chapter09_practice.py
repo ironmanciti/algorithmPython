@@ -38,7 +38,6 @@ def pyramid(n):
         print(" " * (n - i), end="")
         for j in range(1, i + 2):
             print(j, end="")
-        i = 0
         for j in range(i, 0, -1):
             print(j, end="")
         print()
@@ -81,7 +80,7 @@ print(average([2,3,4,5,6]))
 """
 x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 for i in range(len(x)-3):
-    print(x[i:i+3], ',', i+4)
+    print(x[i:i+3], ',', x[i+3])
 #%%
 """
 >>도전문제
@@ -96,11 +95,12 @@ n 개의 숫자로 이루어진 피보나치 수열을 출력하는 함수를 �
 """
 def fib(n):
     old, new = 0, 1
-    for i in range(n):
+    for _ in range(n):
         old, new = new, old + new
     return old
 
 lst = []
 for i in range(10):
-    lst.append(i)
+    lst.append(fib(i))
+
 print(lst)

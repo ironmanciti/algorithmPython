@@ -37,6 +37,7 @@ total_search_count = 0
 for word in word_list:
     count = findword(word)
     total_search_count += count
+    
 average_cnt = total_search_count / len(word_list)
 
 print('average_cnt = {:.2f}'.format(average_cnt))
