@@ -1,8 +1,12 @@
 """
-1) 다음 문장 수행 후의 output 은 ?
+1)    ∑𝑛𝑘=1𝑘  을 계산하는 함수 sigma(n) 을 작성하라. (n 은 정수)
 """
-xlist = [1, [1, 2], [1, 2, 3]]
-print(xlist[1][1] + 1)
+def sigma(n):
+    k = list(range(1, n+1))
+    return sum(k)
+
+
+print(sigma(10))
 
 """
 Slide Type
