@@ -20,4 +20,8 @@ for line in f:
     for word in line.split():
         counts[word] = counts.get(word, 0) + 1
 
-print(sorted(counts.items(), key=lambda kv: kv[1], reverse=True)[:10])
+count_lst = []
+for k, v in counts.items():
+    count_lst.append((v, k))
+        
+print(sorted(count_lst, reverse=True)[:10])

@@ -1,53 +1,36 @@
-import random
+import sqlite3
+con = sqlite3.connect('test.sqlite')
+try:        
+    cur = con.cursor()
+    cur.execute(" DROP TABLE IF EXISTS student")
+    cur.execute('''CREATE TABLE student (
+                        StudentID CHAR(2),
+                        name TEXT (20) NOT NULL,
+                        age INTEGER,
+                        marks REAL);''')
+    print ('table created successfully')
+except Exception as e:
+    print ('error in operation, ', e)
 
-def qsort(qlist):
-    lower = []
-    higher = []
-    sorted_list = []
+cur = con.cursor()
 
-    if len(qlist) < 1:
-        return           # None returned
+sql = "insert into student (StudentID, name, age, marks) values(?,?,?,?);"
+students=[('A1', '홍길동', 20, 70), ('A2', '유병길', 16, 80), ('A3', '김길수', 29, 90)]
+cur.executemany(sql, students)
 
-    center = qlist[-1]
+sql = "select * from student"
+cur.execute(sql)
+print(cur.fetchall())
 
-    for element in qlist[:-1]:
-        if element <= center:
-            lower.append(element)
-        else:
-            higher.append(element)
+sql = "insert into student (StudentID, name, age, marks) values('A4', '박재만', 25, 86)"
+cur.execute(sql)
 
-    lower = qsort(lower)
+sql = "update student set age=59 where StudentID = 'A3'"
+cur.execute(sql)
 
-    if  lower != None:
-        sorted_list += lower
+sql = "select * from student"
+cur.execute(sql)
+print(cur.fetchall())
 
-    sorted_list.append(center)
-
-    higher = qsort(higher)
-    if  higher  != None:
-        sorted_list += higher
-
-    return sorted_list
-
-print(qsort([random.randrange(1, 10000) for _ in range(1000)]))
-
-"""
-학생 list 를 우수한 성적순으로 정렬
-"""
-
-students = [
-        ('홍길동', 3.9, 2016303),
-        ('김철수', 3.0, 2016302),
-        ('최자영', 4.3, 2016301),
-]
-
-print(sorted(students, key=lambda x: x[1], reverse=True))
-
-"""
-dictionary 를 value 순으로 정렬
-"""
-
-dict = {'A' :5,'D' :7,'C' :3,'B' :2}
-
-print(sorted(dict.items(), key=lambda kv: kv[1]))
-
+con.commit()
+con.close()
