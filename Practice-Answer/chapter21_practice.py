@@ -6,7 +6,7 @@ lorem = """
 word_list = lorem.split()
 word_list.sort()
 
-def findword(word):
+def binary_findword(word):
     start = 0
     end = len(word_list)
     words = word_list
@@ -23,11 +23,11 @@ def findword(word):
             start, end = middle + 1, len(word_list)
         words = words[start:end]
 
-print(findword('헌법재판소는'))
+print(binary_findword('헌법재판소는'))
 #%%
 max_count = 0
 for word in word_list:
-    count = findword(word)
+    count = binary_findword(word)
     if count > max_count:
         max_count = count
 
@@ -35,7 +35,7 @@ print("max_count = ", max_count)
 #%%
 total_search_count = 0
 for word in word_list:
-    count = findword(word)
+    count = binary_findword(word)
     total_search_count += count
     
 average_cnt = total_search_count / len(word_list)
