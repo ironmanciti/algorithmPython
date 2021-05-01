@@ -18,12 +18,3 @@ xlist = [2, 1, 3, 5, 4]
 
 print(sorted(xlist))
 print(sorted(xlist, reverse=True))
-
-"""
-3) 두개의 list element 들을 짝을 지워 출력
-"""
-stocks = ['삼성전자', '대한항공', 'google', 'apple']
-close = [40000, 2000, 50000, 100000]
-
-for s, c in zip(stocks, close):
-    print(s, c)
